@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:17:20 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/22 17:28:07 by amajer           ###   ########.fr       */
+/*   Created: 2021/11/19 17:08:07 by amajer            #+#    #+#             */
+/*   Updated: 2021/11/19 17:13:27 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
 
 	i = 0;
-	j = 0;
-	while((int)len > 0)
+	while(s[i] != 0)
 	{
-		dst[i] = (char)src[i];
-		if (src[i] == '\0')
-		{
-			while ((int)len > 0)
-			{
-				dst[i] = '\0';
-				i++;
-				len--;
-			}
-		}
-		len--;
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	return (dst);
 }

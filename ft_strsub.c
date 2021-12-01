@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:17:20 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/22 17:28:07 by amajer           ###   ########.fr       */
+/*   Created: 2021/11/24 19:01:46 by amajer            #+#    #+#             */
+/*   Updated: 2021/11/30 18:26:36 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
+	char	*substr;
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	while((int)len > 0)
+	substr = (char *)malloc(sizeof(char) * len + 1);
+	if (!substr)
+		return (NULL);
+	while (i < len)
 	{
-		dst[i] = (char)src[i];
-		if (src[i] == '\0')
-		{
-			while ((int)len > 0)
-			{
-				dst[i] = '\0';
-				i++;
-				len--;
-			}
-		}
-		len--;
+		substr[i] = s[start];
 		i++;
+		start++;
 	}
-	return (dst);
+	substr[i] = '\0';
+	return (substr);
 }

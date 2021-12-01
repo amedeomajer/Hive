@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:17:20 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/22 17:28:07 by amajer           ###   ########.fr       */
+/*   Created: 2021/11/18 16:33:13 by amajer            #+#    #+#             */
+/*   Updated: 2021/11/23 11:57:33 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	j;
+	char	*p2c;
+	unsigned int	i;
+	int	found;
 
 	i = 0;
-	j = 0;
-	while((int)len > 0)
+	found = 0;
+	p2c = NULL;
+	while (s[i] != 0)
 	{
-		dst[i] = (char)src[i];
-		if (src[i] == '\0')
-		{
-			while ((int)len > 0)
-			{
-				dst[i] = '\0';
-				i++;
-				len--;
-			}
-		}
-		len--;
+		if (s[i] == (char)c)
+			p2c = (char *)&s[i];
 		i++;
 	}
-	return (dst);
+	if (s[i] == (char)c)
+		p2c = (char *)&s[i];
+	if (p2c)
+		return (p2c);
+	return (NULL);
 }

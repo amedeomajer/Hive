@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:17:20 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/22 17:28:07 by amajer           ###   ########.fr       */
+/*   Created: 2021/11/15 19:40:08 by amajer            #+#    #+#             */
+/*   Updated: 2021/11/18 19:27:00 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	char	*p_to_c;
 
+	p_to_c = NULL;
 	i = 0;
-	j = 0;
-	while((int)len > 0)
+	while (s[i] != '\0')
 	{
-		dst[i] = (char)src[i];
-		if (src[i] == '\0')
+		if (s[i] == (char)c)
 		{
-			while ((int)len > 0)
-			{
-				dst[i] = '\0';
-				i++;
-				len--;
-			}
+			p_to_c = (char *)&s[i];
+			return (p_to_c);
 		}
-		len--;
 		i++;
 	}
-	return (dst);
+	if ((char)c == '\0')
+	{
+		p_to_c = (char *)&s[i];
+		return (p_to_c);
+	}
+	return (p_to_c);
 }

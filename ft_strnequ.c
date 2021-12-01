@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnqu.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:17:20 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/22 17:28:07 by amajer           ###   ########.fr       */
+/*   Created: 2021/11/24 17:31:06 by amajer            #+#    #+#             */
+/*   Updated: 2021/11/24 18:04:16 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+int	ft_strnequ(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	size_t	j;
-
+	
 	i = 0;
-	j = 0;
-	while((int)len > 0)
+	if (!s1 || !s2)
+		return (0);
+	if (s1 && s2)
 	{
-		dst[i] = (char)src[i];
-		if (src[i] == '\0')
+		while (i < n)
 		{
-			while ((int)len > 0)
-			{
-				dst[i] = '\0';
-				i++;
-				len--;
-			}
+			if (s1[i] == 0 && s2[i] == 0)
+				return (1);
+			if (s1[i] != s2[i])
+				return (0);
+			i++;
 		}
-		len--;
-		i++;
 	}
-	return (dst);
+	return (1);
 }

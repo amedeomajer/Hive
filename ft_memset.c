@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:17:20 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/22 17:28:07 by amajer           ###   ########.fr       */
+/*   Created: 2021/11/15 13:35:11 by amajer            #+#    #+#             */
+/*   Updated: 2021/11/17 14:46:12 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void *ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	unsigned char myChar;
+	unsigned char *temp;
+	size_t i;
 
 	i = 0;
-	j = 0;
-	while((int)len > 0)
+	myChar = (unsigned char)c;
+	temp = b;
+	while (i < len)
 	{
-		dst[i] = (char)src[i];
-		if (src[i] == '\0')
-		{
-			while ((int)len > 0)
-			{
-				dst[i] = '\0';
-				i++;
-				len--;
-			}
-		}
-		len--;
+		temp[i] = myChar;
 		i++;
 	}
-	return (dst);
+	return (b);
 }

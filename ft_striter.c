@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 13:17:20 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/22 17:28:07 by amajer           ###   ########.fr       */
+/*   Created: 2021/11/26 11:12:36 by amajer            #+#    #+#             */
+/*   Updated: 2021/11/26 11:17:23 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while((int)len > 0)
+	int	i;
+	
+	if (s)
 	{
-		dst[i] = (char)src[i];
-		if (src[i] == '\0')
+	i = 0;
+	while (s[i] != 0)
 		{
-			while ((int)len > 0)
-			{
-				dst[i] = '\0';
-				i++;
-				len--;
-			}
+			f(&s[i]);
+			i++;
 		}
-		len--;
-		i++;
 	}
-	return (dst);
 }
