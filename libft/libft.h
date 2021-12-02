@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:24:24 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/30 19:12:18 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/02 16:46:02 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-
+void	ft_putnbr_fd(int n, int fd);
+char	*ft_itoa(int n);
+int		ft_nlen(int n);
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strenqu(char const *s1, char const *s2, size_t n);
 void	ft_strclr(char *s);

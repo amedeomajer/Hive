@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 19:54:31 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/01 17:07:59 by amajer           ###   ########.fr       */
+/*   Created: 2021/12/02 13:25:18 by amajer            #+#    #+#             */
+/*   Updated: 2021/12/02 16:03:20 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+void	ft_putnbr(int nb)
 {
-	int	z;
-	int	i;
-	int	y;
+	int x;
+	int y;
 
-	i = 0;
-
-	if (ft_strlen(haystack) == 0 && ft_strlen(needle) == 0)
-		return (NULL);
-	if (!needle)
-		return ((char *)haystack);
-	while (haystack[i] != '\0')
+	if (nb == -2147483648)
 	{
-		y = 0;
-		z = i;
-		while (haystack[i + y] == needle[y])
-		{
-			if (needle [y + 1] == '\0')
-				return (&((char *)haystack)[z]);
-			y++;
-		}
-		i++;
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
 	}
-	return (NULL);
+	else
+	{
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			nb = -nb;
+		}
+		if (nb > 9)
+		{
+			x = nb / 10;
+			ft_putnbr(x);
+		}
+		y = (nb % 10) + '0';
+		ft_putchar(y);
+	}
 }

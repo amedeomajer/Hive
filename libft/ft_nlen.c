@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_nlen.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 19:54:31 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/01 17:07:59 by amajer           ###   ########.fr       */
+/*   Created: 2021/12/02 12:38:41 by amajer            #+#    #+#             */
+/*   Updated: 2021/12/02 13:16:59 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int	ft_nlen(int n)
 {
-	int	z;
-	int	i;
-	int	y;
+	int	len;
 
-	i = 0;
-
-	if (ft_strlen(haystack) == 0 && ft_strlen(needle) == 0)
-		return (NULL);
-	if (!needle)
-		return ((char *)haystack);
-	while (haystack[i] != '\0')
-	{
-		y = 0;
-		z = i;
-		while (haystack[i + y] == needle[y])
-		{
-			if (needle [y + 1] == '\0')
-				return (&((char *)haystack)[z]);
-			y++;
-		}
-		i++;
+	len = 1;
+	if (n < 0)
+    {
+		n = n * -1;
+		len++;
 	}
-	return (NULL);
+	while (n > 9)
+    {
+      n = n / 10;
+      len++;
+    }
+	return (len + 1);
 }
