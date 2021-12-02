@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:07:55 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/25 15:26:58 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/02 17:27:21 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,27 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+	size_t	z;
 	size_t	i;
-	char	*p_to_n;
+	size_t	y;
 
 	i = 0;
-	if (!needle)
+
+	if (ft_strlen(haystack) == 0 && ft_strlen(needle) == 0)
+		return ((char *)needle);
+	 if (ft_strlen(needle) == 0)
+	 	return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
-		return ((char *)haystack);
-	}
-	while (haystack[i] != 0 && i < len)
-	{
-		if (haystack[i] == needle[0])
+		y = 0;
+		z = i;
+		while (haystack[i + y] == needle[y] && (i + y) < len)
 		{
-			if (ft_strncmp(&haystack[i], needle, len - i) == 0)
-			{
-				p_to_n = (char *)&haystack[i];
-				return (p_to_n);
-			}
+			if (needle [y + 1] == '\0')
+				return (&((char *)haystack)[z]);
+			y++;
 		}
 		i++;
 	}
 	return (NULL);
 }
-
-/*RETURN VALUES
-     If needle is an empty string, haystack is returned;
-	 if needle occurs nowhere in haystack, NULL is returned;
-	 otherwise a pointer to the first character of the first
-     occurrence of needle is returned.*/
