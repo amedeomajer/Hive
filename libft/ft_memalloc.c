@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:51:19 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/23 13:55:56 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:38:02 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void *p;
+	void	*p;
 
 	p = malloc(sizeof(char) * size);
 	if (!p)

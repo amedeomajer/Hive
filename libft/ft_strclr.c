@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:50:44 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/23 16:55:26 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:31:41 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_strclr(char *s)
 {
-	size_t len;
+	size_t	len;
+
 	len = ft_strlen(s);
 	bzero(s, len);
 }

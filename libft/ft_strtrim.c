@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:57:46 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/25 11:52:45 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:11:45 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	calculate_len(char const *s)
 
 char	*ft_strtrim(char const *s)
 {
-	int	j;
-	int	i;
-	int	len;
-	char*	copy;
+	int		j;
+	int		i;
+	int		len;
+	char	*copy;
 
 	i = 0;
 	j = 0;

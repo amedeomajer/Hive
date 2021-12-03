@@ -6,7 +6,7 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:24:24 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/02 17:58:07 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:18:45 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_strclr(char *s);
 char	*ft_strstr(const char *haystack, const char *needle);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_strdel(char **as);
-size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);

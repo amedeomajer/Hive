@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:35:18 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/19 14:14:21 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 16:12:33 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	ft_atoi(const char *str)
 	pos_or_neg = 1;
 	i = 0;
 	result = 0;
-
-	while (str[i] == '+' || str[i] == ' ' || str[i] == '\t' || str[i] == '\v' || str[i] == '\f' || str[i]  == '\r' || str[i] == '\n')
+	while (str[i] == '+' || str[i] == ' ' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r' || str[i] == '\n')
 		i++;
 	if (str[i] == '-')
 	{

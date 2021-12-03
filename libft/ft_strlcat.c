@@ -6,17 +6,17 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 18:09:46 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/02 16:40:00 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:28:13 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	j = 0;
 	if (dstsize < ft_strlen(dst))

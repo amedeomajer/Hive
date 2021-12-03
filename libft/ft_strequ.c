@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:25:03 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/24 17:29:54 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:31:07 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strequ(char const *s1, char const *s2)
 	if (s1 && s2)
 	{
 		i = 0;
-		while(s1[i] != 0)
+		while (s1[i] != 0)
 		{
 			if (s1[i] != s2[i])
 				return (0);

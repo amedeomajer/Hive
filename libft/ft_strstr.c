@@ -6,7 +6,7 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 19:54:31 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/02 17:20:40 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:13:07 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	int	y;
 
 	i = 0;
-
 	if (ft_strlen(haystack) == 0 && ft_strlen(needle) == 0)
 		return ((char *)needle);
-	 if (ft_strlen(needle) == 0)
-	 	return ((char *)haystack);
+	if (ft_strlen(needle) == 0)
+		return ((char *)haystack);
 	while (haystack[i] != '\0')
 	{
 		y = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:33:13 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/23 11:57:33 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:24:28 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*p2c;
+	char			*p2c;
 	unsigned int	i;
-	int	found;
+	int				found;
 
 	i = 0;
 	found = 0;

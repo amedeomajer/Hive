@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_rmvwhitespace.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:08:09 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/24 14:09:03 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:32:41 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 int	measure(char const *s)
 {
@@ -31,10 +30,10 @@ int	measure(char const *s)
 
 char	*ft_strtri(char const *s)
 {
-	int	len;
-	int	i;
-	char *copy;
-	int	j;
+	int		len;
+	int		i;
+	char	*copy;
+	int		j;
 
 	j = 0;
 	i = 0;

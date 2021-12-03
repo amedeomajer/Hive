@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:33:29 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/26 11:39:06 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:26:56 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*str;
 
 	i = 0;
@@ -31,27 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
-
-
-/*
- ft_strmapi
-
- Prototype
-char * ft_strmapi(char const *s, char (*f)(unsigned int, char));
-
-Description
-Applies the function f to each character of the string passed as argument by giving its index as first argument to create a “fresh” new string (with malloc(3)) resulting from the suc- cessive applications of f.
-
-Param. #1
-The string to map.
-
-Param. #2
-The function to apply to each character of s and its index.
-
-Return value
-The “fresh” string created from the successive applications of f.
-
-Libc functions
-malloc(3)
- */
