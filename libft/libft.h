@@ -6,20 +6,16 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:24:24 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/03 13:18:45 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/07 17:05:11 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <stdlib.h>
+
 # include <unistd.h>
-# include <stdio.h>
 # include <string.h>
-# include <strings.h>
+# include <stdlib.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -73,7 +69,8 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_nlen(int n);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+int		ft_isupper(int c);
 
 #endif

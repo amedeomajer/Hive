@@ -6,13 +6,13 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:35:18 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/03 16:12:33 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/06 17:45:38 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_second_character(const char *str)
+static int	ft_check_second_character(const char *str)
 {
 	if (str[1] == '+' || str[1] == '-')
 		return (0);
@@ -36,7 +36,7 @@ int	ft_atoi(const char *str)
 		pos_or_neg = -1;
 		i++;
 	}
-	if (check_second_character(str) == 0)
+	if (ft_check_second_character(str) == 0)
 		return (0);
 	while (str[i] >= '0' && str[i] <= '9')
 	{

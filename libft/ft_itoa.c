@@ -6,16 +6,17 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:08:28 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/03 13:40:01 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/06 13:37:24 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_populate_str(char *str, int len, int n)
+static char	*ft_populate_str(char *str, int len, int n)
 {
 	int	sign;
 
+	sign = 0;
 	if (n < 0)
 		sign = 1;
 	if (sign)

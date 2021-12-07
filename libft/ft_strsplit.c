@@ -6,13 +6,13 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:44:59 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/03 13:17:52 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/06 18:12:49 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_populate(const char *s, char **str, char c)
+static char	**ft_populate(const char *s, char **str, char c)
 {
 	int	i;
 	int	a;
@@ -37,7 +37,7 @@ char	**ft_populate(const char *s, char **str, char c)
 	return (str);
 }
 
-int	ft_measure(const char *s, char c)
+static int	ft_measure(const char *s, char c)
 {
 	int	count;
 	int	i;
@@ -74,7 +74,11 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		str[i] = ft_strnew(ft_strlen(s));
 		if (!str[i])
+		{
+			while (i >= 0)
+				free(str[i--]);
 			return (NULL);
+		}
 		i++;
 	}
 	str[i] = NULL;

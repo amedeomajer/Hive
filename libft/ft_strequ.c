@@ -6,7 +6,7 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:25:03 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/03 13:31:07 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/06 17:30:04 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,7 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	int	i;
-
-	if (s1 && s2)
-	{
-		i = 0;
-		while (s1[i] != 0)
-		{
-			if (s1[i] != s2[i])
-				return (0);
-			i++;
-		}
-	}
-	return (1);
+	if (ft_strcmp(s1, s2) == 0)
+		return (1);
+	return (0);
 }
