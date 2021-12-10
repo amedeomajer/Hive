@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 11:33:29 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/03 13:26:56 by amajer           ###   ########.fr       */
+/*   Created: 2021/12/01 17:08:28 by amajer            #+#    #+#             */
+/*   Updated: 2021/12/06 13:37:24 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+static char	*ft_populate_str(char *str, int len, int n)
 {
-	int		i;
+	int	sign;
+
+	sign = 0;
+	if (n < 0)
+		sign = 1;
+	if (sign)
+	{
+		str[0] = '-';
+		n = n * -1;
+	}
+	str[--len] = '\0';
+	while (n > 9)
+	{
+		str[--len] = (n % 10) + 48;
+		n = n / 10;
+	}
+	str[--len] = (n % 10) + 48;
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{
 	int		len;
 	char	*str;
 
-	i = 0;
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * len + 1);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = ft_nlen(n);
+	str = (char *)malloc(sizeof(char) * len);
 	if (!str)
 		return (NULL);
-	while (s[i] != 0)
-	{
-		str[i] = f(i, s[i]);
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	return (ft_populate_str(str, len, n));
 }

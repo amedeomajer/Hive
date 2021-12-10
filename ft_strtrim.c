@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:57:46 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/25 11:52:45 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/06 17:33:53 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	calculate_len(char const *s)
+static int	ft_calculate_len(char const *s)
 {
 	int	i;
 	int	len;
@@ -32,10 +32,10 @@ int	calculate_len(char const *s)
 
 char	*ft_strtrim(char const *s)
 {
-	int	j;
-	int	i;
-	int	len;
-	char*	copy;
+	int		j;
+	int		i;
+	int		len;
+	char	*copy;
 
 	i = 0;
 	j = 0;
@@ -43,7 +43,7 @@ char	*ft_strtrim(char const *s)
 		i++;
 	if (s[i] == '\0')
 		return ("");
-	len = calculate_len(s);
+	len = ft_calculate_len(s);
 	copy = (char *)malloc(sizeof(char) * len + 2);
 	if (!copy)
 		return (NULL);

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_nlen.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 13:51:19 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/03 13:38:02 by amajer           ###   ########.fr       */
+/*   Created: 2021/12/02 12:38:41 by amajer            #+#    #+#             */
+/*   Updated: 2021/12/03 13:35:08 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int	ft_nlen(int n)
 {
-	void	*p;
+	int	len;
 
-	p = malloc(sizeof(char) * size);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, size);
-	return (p);
+	len = 1;
+	if (n < 0)
+	{
+		n = n * -1;
+		len++;
+	}
+	while (n > 9)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len + 1);
 }

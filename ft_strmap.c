@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:27:00 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/26 11:33:17 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:27:07 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*str;
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 
 	i = 0;
 	len = ft_strlen(s);
