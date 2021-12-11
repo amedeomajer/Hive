@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static int	ft_calculate_len(char const *s)
+static size_t	ft_calculate_len(char const *s)
 {
-	int	i;
-	int	len;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
 	len = 0;
@@ -32,26 +32,24 @@ static int	ft_calculate_len(char const *s)
 
 char	*ft_strtrim(char const *s)
 {
-	int		j;
-	int		i;
-	int		len;
-	char	*copy;
+	size_t		j;
+	size_t		i;
+	size_t		len;
+	char		*copy;
 
 	i = 0;
 	j = 0;
 	while ((s[i] == ' ' || s[i] == '\t' || s[i] == '\n') && s[i] != '\0')
 		i++;
 	if (s[i] == '\0')
-		return ("");
+		return (ft_strnew(0));
 	len = ft_calculate_len(s);
 	copy = (char *)malloc(sizeof(char) * len + 2);
 	if (!copy)
 		return (NULL);
 	while (len >= 0)
 	{
-		copy[j] = s[i];
-		j++;
-		i++;
+		copy[j++] = s[i++];
 		len--;
 	}
 	copy[j] = '\0';

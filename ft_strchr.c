@@ -31,7 +31,7 @@ char	*ft_strchr(const char *s, int c)
 	if ((char)c == '\0')
 	{
 		p_to_c = (char *)&s[i];
-		return (p_to_c);
+		return (p_to_c);			//   <-- maybe this can be deleted
 	}
 	return (p_to_c);
 }

@@ -16,9 +16,7 @@ static char	*ft_populate_str(char *str, int len, int n)
 {
 	int	sign;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
+	sign = n < 0;
 	if (sign)
 	{
 		str[0] = '-';
@@ -36,13 +34,13 @@ static char	*ft_populate_str(char *str, int len, int n)
 
 char	*ft_itoa(int n)
 {
-	int		len;
+	size_t	len;
 	char	*str;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	len = ft_nlen(n);
-	str = (char *)malloc(sizeof(char) * len);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
 	return (ft_populate_str(str, len, n));

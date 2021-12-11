@@ -17,22 +17,14 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	i = (int)(-1);
 	j = 0;
-	while ((int)len > 0)
+	while (++i < len)
 	{
 		dst[i] = (char)src[i];
 		if (src[i] == '\0')
-		{
-			while ((int)len > 0)
-			{
+			while (++i < len)  // make sure this works fine
 				dst[i] = '\0';
-				i++;
-				len--;
-			}
-		}
-		len--;
-		i++;
 	}
 	return (dst);
 }

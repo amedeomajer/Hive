@@ -18,11 +18,7 @@ void	ft_putnbr(int nb)
 	int	y;
 
 	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
-	}
+		write(1, "-2147483648", 12);
 	else
 	{
 		if (nb < 0)
@@ -31,11 +27,7 @@ void	ft_putnbr(int nb)
 			nb = -nb;
 		}
 		if (nb > 9)
-		{
-			x = nb / 10;
-			ft_putnbr(x);
-		}
-		y = (nb % 10) + '0';
-		ft_putchar(y);
+			ft_putnbr(nb / 10);
+		ft_putchar((nb % 10) + '0');
 	}
 }

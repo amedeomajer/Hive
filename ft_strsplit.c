@@ -79,6 +79,7 @@ char	**ft_strsplit(char const *s, char c)
 				free(str[i--]);
 			return (NULL);
 		}
+		free(str);
 		i++;
 	}
 	str[i] = NULL;

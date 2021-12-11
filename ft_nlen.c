@@ -27,5 +27,5 @@ int	ft_nlen(int n)
 		n = n / 10;
 		len++;
 	}
-	return (len + 1);
+	return (len);
 }
