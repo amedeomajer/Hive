@@ -6,7 +6,7 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:44:59 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/06 18:12:49 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/13 16:46:15 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ char	**ft_strsplit(char const *s, char c)
 			while (i >= 0)
 				free(str[i--]);
 			return (NULL);
+			free(str);
 		}
-		free(str);
 		i++;
 	}
 	str[i] = NULL;
