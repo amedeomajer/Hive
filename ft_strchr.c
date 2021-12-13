@@ -6,7 +6,7 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 19:40:08 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/03 13:32:00 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/13 13:56:32 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strchr(const char *s, int c)
 	if ((char)c == '\0')
 	{
 		p_to_c = (char *)&s[i];
-		return (p_to_c);			//   <-- maybe this can be deleted
+		return (p_to_c);
 	}
 	return (p_to_c);
 }

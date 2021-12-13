@@ -6,7 +6,7 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:57:46 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/06 17:33:53 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/13 13:56:38 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,15 @@ char	*ft_strtrim(char const *s)
 	if (s[i] == '\0')
 		return (ft_strnew(0));
 	len = ft_calculate_len(s);
-	copy = (char *)malloc(sizeof(char) * len + 2);
+	copy = (char *)malloc(sizeof(char) * len + 1);
 	if (!copy)
 		return (NULL);
-	while (len >= 0)
+	while (len > 0)
 	{
 		copy[j++] = s[i++];
 		len--;
 	}
+	copy[j++] = s[i];
 	copy[j] = '\0';
 	return (copy);
 }

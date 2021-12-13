@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amajer <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:45:48 by amajer            #+#    #+#             */
-/*   Updated: 2021/11/23 13:32:00 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/13 13:56:33 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	while (*src)
-		*dst++ = *src++;
-	*dst = '\0';
+	size_t	i;
+
+	i = 0;
+	while (src[i] != 0)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
 	return (dst);
 }
