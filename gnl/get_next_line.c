@@ -6,7 +6,7 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:57:05 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/21 21:17:24 by amajer           ###   ########.fr       */
+/*   Updated: 2021/12/22 14:14:09 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,42 +24,48 @@ int get_next_line(const int fd, char **line)
 	static char	*str;
 	char	*trimmed_str;
 	int	ret;
-	unsigned char	new_line;
+	char	*new_line;
 	int	len;
 
+	new_line = 0;
+	ret = 1;
 	len = 0;
 	str = (char *)malloc(sizeof(char) * BUFF_SIZE);
 	while (ret != 0)
 	{
 		ret = read(fd, str, BUFF_SIZE);
-		new_line = ft_memchr((void *)str, (int)('\n'), BUFF_SIZE);
+		//printf("|read has returned: %i|\n", ret);
+		//printf("buff contains: %s\n", str);
+		new_line = ft_memchr((void *)str, (int)('\n'), ret);
 		if (new_line)
 		{
 			len = new_line - str;
-			str[len + 1] = 0;
-			trimmed_str = (char *)malloc(sizeof(char) * len + 1);
-			ft_memcpy((void *)trimmed_str, (const void *)str, len + 1);
-			line = trimmed_str;
+			//printf("|len ammounts to: %i|\n", len);
+			trimmed_str = (char *)malloc(sizeof(char) * len);
+			ft_memcpy((void *)trimmed_str, (const void *)str, len);
+			trimmed_str[len] = '\0';
+			//printf("|trimmed string contains: %s\n|", trimmed_str);
+			line = &trimmed_str;
+			//printf("line now contains: %s\n", line[0]);
 			return (1);
 		}
-		else if (!new_line)
-		{
-			len = len + ret;
-			str[len + 1] = 0;
-			trimmed_str = (char *)malloc(sizeof(char) * len + 1);
-			ft_memcpy((void *)trimmed_str, (const void *)str, len + 1);
-		}
+
 	}
+	return (0);
 }
 
 int	main()
 {
 	int	fd;
+	char *line;
 
+	line = (char *)malloc(sizeof(char) * 4090);
 	fd = open("test_simple.txt", O_RDONLY);
 	if (!fd)
-		printf("open failed");
-	get_next_line(fd);
+		//printf("open failed");
+	while (get_next_line(fd, &line))
+		;
+	//printf("|%s|\n", line);
 	return (0);
 }
 
