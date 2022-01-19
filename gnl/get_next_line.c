@@ -6,19 +6,11 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:57:05 by amajer            #+#    #+#             */
-/*   Updated: 2022/01/18 19:37:49 by amajer           ###   ########.fr       */
+/*   Updated: 2022/01/19 14:42:37 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "get_next_line.h"
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "libft.h"
-
-#define BUFF_SIZE 10000000
-#define FD_MAX 10240
+#include "get_next_line.h"
 
 static int	ft_str_movedel(char **src, char **dst)
 {
@@ -46,22 +38,6 @@ static char	*ft_copy_to_line(char *str)
 	ft_strncpy(str_to_new_line, str, i);
 	str_to_new_line[i] = '\0';
 	return (str_to_new_line);
-}
-
-static int	ft_isthere(char *str, char c)
-{
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i] != 0)
-	{
-		if (str[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
 }
 
 int	ft_read_function(char **prev, int fd, char **temp)
@@ -112,22 +88,5 @@ int	get_next_line(const int fd, char **line)
 		return (1);
 	}
 	ft_strdel(&previous[fd]);
-	return (0);
-}
-
-int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("test_simple.txt", O_RDONLY);
-	if (fd < 0)
-		printf("\nopen failed\n");
-	while (get_next_line(fd, &line))
-	{
-		printf("|%s|\n", line);
-		ft_strdel(&line);
-	}
-	system("leaks a.out");
 	return (0);
 }

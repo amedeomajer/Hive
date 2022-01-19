@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 12:40:51 by amajer            #+#    #+#             */
-/*   Updated: 2021/12/13 13:56:35 by amajer           ###   ########.fr       */
+/*   Created: 2022/01/19 14:19:59 by amajer            #+#    #+#             */
+/*   Updated: 2022/01/19 14:39:59 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 10
+# define FD_MAX 10240
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
-	size_t	j;
-	size_t	src_len;
+# include "libft/libft.h"
 
-	j = 0;
-	i = 0;
-	src_len = ft_strlen(src);
-	if (dstsize <= src_len)
-		return (src_len);
-	while (dstsize > (i + 1) && src[j] != 0)
-	{
-		dst[i++] = ((char *)src)[j++];
-		dstsize--;
-	}
-	dst[i] = '\0';
-	return (src_len);
-}
+int	get_next_line(const int fd, char **line);
+
+#endif
