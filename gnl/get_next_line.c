@@ -6,11 +6,27 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 15:57:05 by amajer            #+#    #+#             */
-/*   Updated: 2022/01/19 14:42:37 by amajer           ###   ########.fr       */
+/*   Updated: 2022/01/19 17:00:35 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+static int	ft_isthere(char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 static int	ft_str_movedel(char **src, char **dst)
 {
@@ -40,7 +56,7 @@ static char	*ft_copy_to_line(char *str)
 	return (str_to_new_line);
 }
 
-int	ft_read_function(char **prev, int fd, char **temp)
+static int	ft_read_function(char **prev, int fd, char **temp)
 {
 	int		ret;
 	char	*buff;
@@ -75,8 +91,10 @@ int	get_next_line(const int fd, char **line)
 	if (fd < 0 || fd > FD_MAX || !line)
 		return (-1);
 	if (ft_isthere(previous[fd], '\n') == 0)
+	{
 		if (ft_read_function((char **)&previous, fd, &temp) == -1)
 			return (-1);
+	}
 	if (previous[fd][0] != '\0')
 	{
 		*line = ft_copy_to_line(previous[fd]);

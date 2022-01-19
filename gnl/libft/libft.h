@@ -6,7 +6,7 @@
 /*   By: amajer <amajer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:24:24 by amajer            #+#    #+#             */
-/*   Updated: 2022/01/14 18:37:34 by amajer           ###   ########.fr       */
+/*   Updated: 2022/01/19 14:56:22 by amajer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,5 @@ int		ft_tolower(int c);
 int		ft_nlen(int n);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 int		ft_isupper(int c);
-int		ft_isthere(char *str, char c);
 
 #endif
